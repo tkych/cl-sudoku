@@ -1,20 +1,23 @@
-Last Updated : 2011/12/22 19:48:15 tkych
+Last Updated : 2011/12/22 20:11:37 tkych
 
 
 CL-SUDOKU: Norvig's Sudoku Solver in Common Lisp
 ======================================================================
 
-Sudoku is a puzzle, we put a number from 1 to 9 so as to satisfy the rules in the square of the 9 × 9.
-Cl-sudoku is Common Lisp translation of Peter Norvig's sudoku solver, by Takaya Ochiai.
+Sudoku is a puzzle, we put a number from 1 to 9 so as to satisfy the
+rules in the square of the 9 × 9.  Cl-sudoku is Common Lisp
+translation of Peter Norvig's sudoku solver, by Takaya Ochiai.
 Norvig's [original code][] is written in Python.
 
-The main algorithm used in this program is a constraint-propagation and depth-first-search.
-The solution procedure is the following.
+The main algorithm used in this program is a constraint-propagation
+and depth-first-search.  The solution procedure is the following.
 First, consider the placement of the number allowed in each square.
-The square, all may be placed from one to nine digits.
-Then, one by one we put a number in the square already know the numbers in question.
-As it will be reducing the number of possible placement in the other square (constraint-propagation).
-Finally, if there is a possibility of a few numbers in the square, look for consistent placement under each of these possibilities (depth-first-search).
+The square, all may be placed from one to nine digits.  Then, one by
+one we put a number in the square already know the numbers in
+question.  As it will be reducing the number of possible placement in
+the other square (constraint-propagation).  Finally, if there is a
+possibility of a few numbers in the square, look for consistent
+placement under each of these possibilities (depth-first-search).
 
 For more details, please see his essay:
 
@@ -43,7 +46,8 @@ This essay has been translated into:
  Installation
 ----------------------------------------------------------------------
 
-If your REPL has been loaded [asdf][] or [quicklisp][], type on the REPL,
+If your REPL has been loaded [asdf][] or [quicklisp][], type on the
+REPL,
 
 1.  CL-REPL> `(push path-to-cl-sudoku-directory/cl-sudoku/ asdf:*central-registry*)`
 2.  CL-REPL> `(asdf:operate 'asdf:load-op :cl-sudoku)` or `(ql:quickload :cl-sudoku)`
@@ -144,21 +148,25 @@ If your REPL has been loaded [asdf][] or [quicklisp][], type on the REPL,
  Functions
 ----------------------------------------------------------------------
 
-The usages of function name in sudoku.lisp, obey in Novig's original code, except the name of the function 'search'(-> df-search).
-The following two functions in added-wrappers.lisp, added by translator for user convenience.
+The usages of function name in sudoku.lisp, obey in Novig's original
+code, except the name of the function 'search'(-> df-search).  The
+following two functions in added-wrappers.lisp, added by translator
+for user convenience.
 
 1.  __make-puzzle__ &optional n => grid(sudoku-puzzle-string)
 
     n---number of initial numbers, default is 17.
 
-    The function make-puzzle makes sudoku puzzle at random, and outputs it in string.
+    The function make-puzzle makes sudoku puzzle at random, and
+    outputs it in string.
 
 
 2.  __solve-it__ &optional grid => NIL
     
     grid---sudoku-puzzle-string, default is *.
 
-    The function solve-it solves sudoku puzzle, and displays solution & run time.
+    The function solve-it solves sudoku puzzle, and displays solution
+    & run time.
 
 
 ----------------------------------------------------------------------
