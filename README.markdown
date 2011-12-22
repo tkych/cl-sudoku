@@ -1,4 +1,4 @@
-Last Updated : 2011/12/22 20:11:37 tkych
+Last Updated : 2011/12/22 20:34:42 tkych
 
 
 CL-SUDOKU: Norvig's Sudoku Solver in Common Lisp
@@ -11,9 +11,9 @@ Norvig's [original code][] is written in Python.
 
 The main algorithm used in this program is a constraint-propagation
 and depth-first-search.  The solution procedure is the following.
-First, consider the placement of the number allowed in each square.
-The square, all may be placed from one to nine digits.  Then, one by
-one we put a number in the square already know the numbers in
+First, consider the possible placement of the number allowed in each
+square.  The square, all may be placed from one to nine digits.  Then,
+one by one we put a number in the square already know the numbers in
 question.  As it will be reducing the number of possible placement in
 the other square (constraint-propagation).  Finally, if there is a
 possibility of a few numbers in the square, look for consistent
